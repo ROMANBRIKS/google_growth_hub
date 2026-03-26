@@ -54,7 +54,7 @@ export default function Quiz() {
                   <div className="flex justify-between items-center mb-6">
                     <div className="flex items-center space-x-3">
                       <img 
-                        src="https://www.gstatic.com/images/branding/product/2x/googleg_clr_24dp.png" 
+                        src="https://www.gstatic.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" 
                         alt="G" 
                         className="w-6 h-6"
                         referrerPolicy="no-referrer"
@@ -107,10 +107,15 @@ export default function Quiz() {
               <div className="p-10 md:p-20 text-center">
                 <div className={cn(
                   "w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-10 google-shadow",
-                  result === 'workspace' ? "bg-blue-50 text-google-blue" :
-                  result === 'cloud' ? "bg-red-50 text-google-red" : "bg-green-50 text-google-green"
+                  result === 'workspace' ? "bg-blue-50" :
+                  result === 'cloud' ? "bg-red-50" : "bg-green-50"
                 )}>
-                  <CheckCircle2 className="w-12 h-12" />
+                  <img 
+                    src={recommendedService?.logoUrl} 
+                    alt={recommendedService?.title} 
+                    className="w-16 h-16 object-contain"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <h2 className="text-xs font-bold text-gray-400 uppercase tracking-[0.3em] mb-4">Recommended Solution</h2>
                 <h3 className="text-5xl font-bold text-gray-900 mb-8 tracking-tight">{recommendedService?.title}</h3>

@@ -3,6 +3,7 @@ export interface ServiceInfo {
   title: string;
   description: string;
   icon: string;
+  logoUrl: string;
   features: string[];
   affiliateLink: string;
   videoUrl: string;
@@ -20,6 +21,7 @@ export const SERVICES: ServiceInfo[] = [
     title: "Google Workspace",
     description: "Everything you need to get anything done, now in one place. Google Workspace includes all of the productivity apps you know and love—Gmail, Calendar, Drive, Docs, Sheets, Slides, Meet, and many more.",
     icon: "Layout",
+    logoUrl: "https://www.gstatic.com/images/branding/googleg/2x/googleg_standard_color_96dp.png",
     features: [
       "Custom business email",
       "Video conferencing with 100+ participants",
@@ -39,6 +41,7 @@ export const SERVICES: ServiceInfo[] = [
     title: "Google Cloud",
     description: "Accelerate your organization's digital transformation with Google Cloud. Build, deploy, and scale applications on the same infrastructure Google uses.",
     icon: "Cloud",
+    logoUrl: "https://www.gstatic.com/images/branding/product/2x/cloud_96dp.png",
     features: [
       "Compute Engine & Kubernetes",
       "BigQuery for Data Analytics",
@@ -58,6 +61,7 @@ export const SERVICES: ServiceInfo[] = [
     title: "Google Play",
     description: "Reach billions of users worldwide with Google Play. Distribute your apps, games, and digital content on the world's most popular mobile platform.",
     icon: "Play",
+    logoUrl: "https://www.gstatic.com/images/branding/product/2x/play_96dp.png",
     features: [
       "Global App Distribution",
       "Play Console Analytics",

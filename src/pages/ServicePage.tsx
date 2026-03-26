@@ -36,9 +36,9 @@ export default function ServicePage({ serviceId: propId }: ServicePageProps) {
               </div>
               <div className="flex items-center space-x-4 mb-8">
                 <img 
-                  src="https://www.gstatic.com/images/branding/product/2x/googleg_clr_24dp.png" 
-                  alt="G" 
-                  className="w-10 h-10"
+                  src={service.logoUrl} 
+                  alt={service.title} 
+                  className="w-16 h-16 object-contain"
                   referrerPolicy="no-referrer"
                 />
                 <h1 className="text-5xl md:text-7xl font-bold tracking-tight">{service.title}</h1>

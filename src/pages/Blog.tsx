@@ -9,9 +9,9 @@ export default function Blog() {
       <div className="text-center mb-20">
         <div className="flex justify-center mb-6">
           <img 
-            src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" 
+            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
             alt="Google" 
-            className="h-8"
+            className="h-10"
             referrerPolicy="no-referrer"
           />
         </div>

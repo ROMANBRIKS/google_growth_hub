@@ -31,9 +31,9 @@ function Navbar() {
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Workspace', path: '/workspace', icon: Layout },
-    { name: 'Cloud', path: '/cloud', icon: Cloud },
-    { name: 'Play', path: '/play', icon: Play },
+    { name: 'Workspace', path: '/workspace', logo: "https://www.gstatic.com/images/branding/googleg/2x/googleg_standard_color_96dp.png" },
+    { name: 'Cloud', path: '/cloud', logo: "https://www.gstatic.com/images/branding/product/2x/cloud_96dp.png" },
+    { name: 'Play', path: '/play', logo: "https://www.gstatic.com/images/branding/product/2x/play_96dp.png" },
     { name: 'Blog', path: '/blog', icon: BookOpen },
     { name: 'Quiz', path: '/quiz', icon: Zap },
   ];
@@ -45,7 +45,7 @@ function Navbar() {
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center google-shadow group-hover:google-shadow-hover transition-all overflow-hidden">
               <img 
-                src="https://www.gstatic.com/images/branding/product/2x/googleg_clr_24dp.png" 
+                src="https://www.gstatic.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" 
                 alt="Google" 
                 className="w-6 h-6 object-contain"
                 referrerPolicy="no-referrer"
@@ -98,21 +98,23 @@ function Navbar() {
             className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-2">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
                   className="flex items-center space-x-3 p-3 rounded-xl hover:bg-gray-50 text-gray-700"
                 >
-                  <link.icon className={cn(
-                    "w-5 h-5",
-                    index === 0 ? "text-google-blue" :
-                    index === 1 ? "text-google-red" :
-                    index === 2 ? "text-google-green" :
-                    index === 3 ? "text-google-yellow" :
-                    "text-google-blue"
-                  )} />
+                  {link.logo ? (
+                    <img 
+                      src={link.logo} 
+                      alt={link.name} 
+                      className="w-5 h-5 object-contain"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : link.icon && (
+                    <link.icon className="w-5 h-5 text-google-blue" />
+                  )}
                   <span className="font-medium">{link.name}</span>
                 </Link>
               ))}
@@ -132,9 +134,9 @@ function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center space-x-2 mb-6">
               <img 
-                src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" 
+                src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
                 alt="Google" 
-                className="h-6"
+                className="h-8"
                 referrerPolicy="no-referrer"
               />
               <span className="text-xl font-bold tracking-tight text-gray-900">Growth Hub</span>
@@ -164,9 +166,9 @@ function Footer() {
           <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-medium">
             <div className="flex items-center space-x-4">
               <img 
-                src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" 
+                src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
                 alt="Google" 
-                className="h-4 opacity-50"
+                className="h-5 opacity-50"
                 referrerPolicy="no-referrer"
               />
               <p>© 2026 Google Growth Hub. All rights reserved.</p>

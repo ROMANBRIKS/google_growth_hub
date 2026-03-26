@@ -16,6 +16,7 @@ import {
   Smartphone,
   Search
 } from 'lucide-react';
+import { cn } from '../lib/utils';
 import { SERVICES, BLOG_POSTS } from '../constants';
 import GrowthCalculator from '../components/GrowthCalculator';
 
@@ -32,7 +33,7 @@ export default function Home() {
           >
             <div className="inline-flex items-center space-x-3 bg-white text-google-blue px-6 py-2 rounded-full text-sm font-bold mb-10 google-shadow border border-gray-100">
               <img 
-                src="https://www.gstatic.com/images/branding/product/2x/googleg_clr_24dp.png" 
+                src="https://www.gstatic.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" 
                 alt="G" 
                 className="w-5 h-5"
                 referrerPolicy="no-referrer"
@@ -52,7 +53,7 @@ export default function Home() {
               <div className="relative flex items-center bg-white rounded-full p-2 google-shadow hover:google-shadow-hover transition-all duration-300 border border-gray-100">
                 <div className="pl-6 pr-4 flex items-center">
                   <img 
-                    src="https://www.gstatic.com/images/branding/product/2x/googleg_clr_24dp.png" 
+                    src="https://www.gstatic.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" 
                     alt="G" 
                     className="w-6 h-6 mr-3"
                     referrerPolicy="no-referrer"
@@ -111,7 +112,7 @@ export default function Home() {
                 <div className="flex items-center justify-between mb-6">
                   <Globe className="text-google-blue w-10 h-10" />
                   <img 
-                    src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" 
+                    src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" 
                     alt="Google" 
                     className="h-5 opacity-30 group-hover:opacity-100 transition-opacity"
                     referrerPolicy="no-referrer"
@@ -146,7 +147,12 @@ export default function Home() {
             
             <div className="md:col-span-2 bg-white p-10 rounded-[2.5rem] border border-gray-100 google-shadow flex items-center gap-8 group hover:google-shadow-hover transition-all">
               <div className="shrink-0 w-24 h-24 bg-green-50 rounded-3xl flex items-center justify-center">
-                <Smartphone className="text-google-green w-12 h-12" />
+                <img 
+                  src="https://www.gstatic.com/images/branding/product/2x/play_96dp.png" 
+                  alt="Google Play" 
+                  className="w-16 h-16 object-contain group-hover:scale-110 transition-transform"
+                  referrerPolicy="no-referrer"
+                />
               </div>
               <div>
                 <h3 className="text-2xl font-bold mb-2">Mobile First</h3>
@@ -180,12 +186,15 @@ export default function Home() {
               >
                 <div className={cn(
                   "w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform group-hover:scale-110",
-                  service.id === 'workspace' ? "bg-blue-50 text-google-blue" :
-                  service.id === 'cloud' ? "bg-red-50 text-google-red" : "bg-green-50 text-google-green"
+                  service.id === 'workspace' ? "bg-blue-50" :
+                  service.id === 'cloud' ? "bg-red-50" : "bg-green-50"
                 )}>
-                  {service.id === 'workspace' && <Layout className="w-8 h-8" />}
-                  {service.id === 'cloud' && <Cloud className="w-8 h-8" />}
-                  {service.id === 'play' && <Play className="w-8 h-8" />}
+                  <img 
+                    src={service.logoUrl} 
+                    alt={service.title} 
+                    className="w-10 h-10 object-contain"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
                 <p className="text-gray-500 mb-8 line-clamp-3 font-medium leading-relaxed">{service.description}</p>
@@ -262,8 +271,4 @@ export default function Home() {
       </section>
     </div>
   );
-}
-
-function cn(...inputs: any[]) {
-  return inputs.filter(Boolean).join(' ');
 }
