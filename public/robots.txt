@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://ais-pre-2fapiawaicpfo532ptsxsh-465217709442.europe-west2.run.app/sitemap.xml
+
+# AI Bot specific instructions
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Bingbot
+Allow: /

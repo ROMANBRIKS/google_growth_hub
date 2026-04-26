@@ -2,10 +2,26 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { Search, Calendar, User, ArrowRight } from 'lucide-react';
 import { BLOG_POSTS } from '../constants';
+import SEO from '../components/SEO';
 
 export default function Blog() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <SEO 
+        title="Growth Insights Blog"
+        description="Deep dives into Google Workspace, Cloud, and Play to help you build better and scale faster. Expert advice on productivity and growth."
+        canonical="https://ais-pre-2fapiawaicpfo532ptsxsh-465217709442.europe-west2.run.app/blog"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          "name": "Google Growth Insights",
+          "description": "Expert advice on scaling businesses with Google services.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Google Growth Hub"
+          }
+        }}
+      />
       <div className="text-center mb-20">
         <div className="flex justify-center mb-6">
           <img 

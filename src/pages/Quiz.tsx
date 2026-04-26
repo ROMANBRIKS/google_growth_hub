@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, RefreshCcw, Layout, Cloud, Play, Zap } from 'lucide-react';
 import { QUIZ_QUESTIONS, SERVICES } from '../constants';
 import { cn } from '../lib/utils';
+import SEO from '../components/SEO';
 
 export default function Quiz() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -38,6 +39,11 @@ export default function Quiz() {
 
   return (
     <div className="min-h-[90vh] flex items-center justify-center px-4 py-32 bg-gray-50">
+      <SEO 
+        title="Product Recommendation Quiz"
+        description="Take our 2-minute quiz to find the perfect Google solutions for your unique business needs. Get tailored recommendations for Workspace, Cloud, or Play."
+        canonical="https://ais-pre-2fapiawaicpfo532ptsxsh-465217709442.europe-west2.run.app/quiz"
+      />
       <div className="max-w-3xl w-full">
         <AnimatePresence mode="wait">
           {!result ? (

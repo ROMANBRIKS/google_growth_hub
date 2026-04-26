@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { CheckCircle2, ExternalLink, Play, ArrowLeft, Info } from 'lucide-react';
 import { SERVICES } from '../constants';
 import { cn } from '../lib/utils';
+import SEO from '../components/SEO';
 
 interface ServicePageProps {
   serviceId?: string;
@@ -17,6 +18,25 @@ export default function ServicePage({ serviceId: propId }: ServicePageProps) {
 
   return (
     <div className="pb-24">
+      <SEO 
+        title={`${service.title} Solutions`}
+        description={service.description}
+        canonical={`https://ais-pre-2fapiawaicpfo532ptsxsh-465217709442.europe-west2.run.app/${service.id}`}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": `Google ${service.title}`,
+          "description": service.description,
+          "provider": {
+            "@type": "Organization",
+            "name": "Google Growth Hub"
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": service.affiliateLink
+          }
+        }}
+      />
       {/* Header */}
       <div className="bg-white border-b border-gray-100 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

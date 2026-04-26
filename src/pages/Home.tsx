@@ -19,10 +19,27 @@ import {
 import { cn } from '../lib/utils';
 import { SERVICES, BLOG_POSTS } from '../constants';
 import GrowthCalculator from '../components/GrowthCalculator';
+import AdSpace from '../components/AdSpace';
+import SEO from '../components/SEO';
 
 export default function Home() {
   return (
     <div className="overflow-hidden">
+      <SEO 
+        title="Google Growth Hub | Scale Your Business with Google Ecosystem"
+        description="Harness the power of Google's infrastructure to transform your business from a startup to a global enterprise. Explore Google Workspace, Cloud, and Play Store solutions."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Google Growth Hub",
+          "url": "https://ais-pre-2fapiawaicpfo532ptsxsh-465217709442.europe-west2.run.app",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://ais-pre-2fapiawaicpfo532ptsxsh-465217709442.europe-west2.run.app/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }}
+      />
       {/* Hero Section */}
       <section className="relative pt-32 pb-40 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-visible">
         <div className="text-center max-w-4xl mx-auto">
@@ -163,6 +180,10 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AdSpace type="inline" />
+      </div>
+
       {/* Interactive Growth Calculator */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <GrowthCalculator />
@@ -214,6 +235,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <AdSpace type="inline" label="Recommended for You" />
+      </div>
 
       {/* Blog Teaser */}
       <section className="py-24 bg-gray-50">

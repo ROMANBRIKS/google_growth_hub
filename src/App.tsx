@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { HelmetProvider } from 'react-helmet-async';
 import { 
   Layout, 
   Cloud, 
@@ -25,6 +26,8 @@ import ServicePage from './pages/ServicePage';
 import Blog from './pages/Blog';
 import Quiz from './pages/Quiz';
 import Chatbot from './components/Chatbot';
+import AdSpace from './components/AdSpace';
+import SEO from './components/SEO';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -185,22 +188,31 @@ function Footer() {
 
 export default function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-white font-sans text-gray-900">
-        <Navbar />
-        <main className="pt-16">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/workspace" element={<ServicePage serviceId="workspace" />} />
-            <Route path="/cloud" element={<ServicePage serviceId="cloud" />} />
-            <Route path="/play" element={<ServicePage serviceId="play" />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/quiz" element={<Quiz />} />
-          </Routes>
-        </main>
-        <Footer />
-        <Chatbot />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen bg-white font-sans text-gray-900">
+          <SEO />
+          <Navbar />
+          <main className="pt-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <AdSpace type="banner" label="Premium Partner" />
+            </div>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/workspace" element={<ServicePage serviceId="workspace" />} />
+              <Route path="/cloud" element={<ServicePage serviceId="cloud" />} />
+              <Route path="/play" element={<ServicePage serviceId="play" />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/quiz" element={<Quiz />} />
+            </Routes>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <AdSpace type="footer" />
+            </div>
+          </main>
+          <Footer />
+          <Chatbot />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }
